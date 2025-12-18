@@ -1,141 +1,181 @@
 /* =========================================
-   1. 全局基础设置
+   1. 定义活力色盘 (Color Palette)
    ========================================= */
-* {
-    box-sizing: border-box; /* 确保边框不会撑大元素的宽度 */
+:root {
+    --primary-color: #00c6ff;      /* 科技蓝：代表 AI */
+    --secondary-color: #0072ff;    /* 深蓝：代表深度学习 */
+    --accent-color: #ff4b1f;       /* 紧急红：代表生命/急救 */
+    --accent-gradient: linear-gradient(to right, #ff9068, #ff4b1f); /* 活力橙红渐变 */
+    --bg-light: #f4f7f6;
+    --text-dark: #2c3e50;
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 更深的投影，增加立体感 */
 }
 
+* { box-sizing: border-box; }
+
 body {
-    margin: 0;          /* 去除浏览器默认边距，实现全屏贴边 */
+    margin: 0;
     padding: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 更现代的无衬线字体 */
+    line-height: 1.7;
+    color: var(--text-dark);
     background-color: #fff;
 }
 
 /* =========================================
-   2. 布局核心工具 (这是居中的关键)
-   ========================================= */
-.container {
-    max-width: 1000px;  /* 内容最大宽度，您可以根据需要调整 */
-    margin: 0 auto;     /* 左右自动边距 = 居中显示 */
-    padding: 0 20px;    /* 防止手机端文字贴边 */
-}
-
-/* =========================================
-   3. 顶部 Hero Header (全宽背景)
+   2. 充满能量的头部 (Energy Header)
    ========================================= */
 header {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* 深邃的蓝绿渐变 */
+    /* 使用深色背景突显亮色文字 */
+    background: radial-gradient(circle at center, #1a2a6c, #b21f1f, #fdbb2d); /* 超大胆的“热力图”风格渐变 */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* 或者：深邃宇宙风格 */
     color: white;
-    padding: 80px 0;    /* 增加上下高度，显得大气 */
+    padding: 100px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
+/* 标题样式 */
 header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    font-weight: 700;
+    font-size: 4rem; /* 更大 */
+    margin: 0;
+    font-weight: 800;
+    background: -webkit-linear-gradient(#fff, #a6c1ee); /* 文字渐变 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
 }
 
 header p {
-    font-size: 1.2rem;
-    opacity: 0.8;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* 心跳动画小球 (装饰) */
+.heartbeat-line {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.pulse-dot {
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    animation: pulse 1.5s infinite; /* 调用下方定义的动画 */
 }
 
 /* =========================================
-   4. 板块样式 (斑马纹背景)
+   3. 动画定义 (让网页活起来)
    ========================================= */
-section {
-    padding: 60px 0; /* 每个板块上下的间距 */
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 75, 31, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(255, 75, 31, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 75, 31, 0); }
 }
 
-/* 白色背景板块 */
-.section-white {
-    background-color: #ffffff;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); } /* 轻轻漂浮 */
+    100% { transform: translateY(0px); }
 }
 
-/* 浅灰背景板块 (用于区分层次) */
-.section-gray {
-    background-color: #f4f6f8;
+/* =========================================
+   4. 布局容器
+   ========================================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 25px;
 }
+
+section { padding: 80px 0; }
+
+.section-white { background-color: #fff; }
+.section-light { background-color: var(--bg-light); } /* 极淡的灰绿色背景 */
 
 h2 {
+    font-size: 2.5rem;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #2c3e50;
-    position: relative;
+    margin-bottom: 50px;
+    color: #333;
 }
-
-/* 标题下面的绿色小横线 */
+/* 标题下的装饰线改为渐变 */
 h2::after {
     content: '';
     display: block;
-    width: 50px;
-    height: 3px;
-    background: #42b983;
+    width: 80px;
+    height: 6px;
+    background: var(--accent-gradient); /* 橙红渐变 */
     margin: 15px auto 0;
+    border-radius: 3px;
 }
 
 /* =========================================
-   5. 卡片网格系统 (展示作品用)
+   5. 活力卡片 (Vibrant Cards)
    ========================================= */
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;       /* 允许换行 */
-    gap: 30px;             /* 卡片之间的间距 */
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
 }
 
 .card {
     background: white;
-    border-radius: 10px;   /* 圆角 */
-    width: 300px;          /* 卡片固定宽度 */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* 漂亮的阴影 */
-    overflow: hidden;
-    transition: transform 0.3s ease; /* 动画过渡 */
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 更有弹性的过渡 */
+    border-top: 5px solid transparent; /* 预留顶部边框位置 */
+    position: relative;
+    z-index: 1;
 }
 
+/* 鼠标悬停时的特效：上浮 + 发光 + 顶部出现彩条 */
 .card:hover {
-    transform: translateY(-5px); /* 鼠标悬停时上浮 */
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-top-color: var(--accent-color);
 }
 
-.card-img {
-    width: 100%;
-    height: 180px;
-    background-color: #ddd; /* 图片加载前的灰色背景 */
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 20px;
+.card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .card h3 {
-    margin-top: 0;
-    color: #333;
+    font-size: 1.5rem;
+    margin: 10px 0;
 }
 
 /* =========================================
-   6. 音频与底部
+   6. 强调框与按钮
    ========================================= */
-.audio-box {
-    background: white;
-    max-width: 600px;
-    margin: 0 auto; /* 让播放器盒子居中 */
+.highlight-box {
+    background: linear-gradient(135deg, #fff5f5, #fff); /* 淡红背景 */
+    border-left: 5px solid var(--accent-color);
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    border-top: 4px solid #42b983; /* 顶部绿色装饰条 */
+    border-radius: 8px;
+    margin-top: 40px;
+    box-shadow: 0 5px 15px rgba(255, 75, 31, 0.1);
 }
 
 footer {
-    background: #333;
-    color: #bbb;
+    background: #1e1e1e;
+    color: white;
     text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
+    padding: 40px 0;
 }
