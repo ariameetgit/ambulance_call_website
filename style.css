@@ -59,15 +59,14 @@ body {
 
 
 header {
-    /* 方案3：珊瑚橙到紫红色 */
-    background: linear-gradient(to right, #ff512f, #dd2476);
+    background: linear-gradient(to right,#3a7bd5, #3a6073);
     
     color: white;
     padding: 100px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 header h1 {
