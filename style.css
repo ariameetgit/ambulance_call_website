@@ -59,7 +59,7 @@ body {
 
 
 header {
-    background: linear-gradient(to left,#159957, #155799);
+    background: linear-gradient(to left,#155799,#159957);
     color: white;
     padding: 100px 0;
     text-align: center;
