@@ -1,16 +1,16 @@
-/* 全局设置：字体和背景 */
+/* Global settings: font and background */
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* 这里控制字体 */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f6f8fa; /* 浅灰色背景 */
+    background-color: #f6f8fa; /* Light gray background */
     color: #333;
     line-height: 1.6;
 }
 
-/* 顶部大标题样式 */
+/* Header style (Top banner) */
 header {
-    background: linear-gradient(120deg, #155799, #159957); /* 蓝绿渐变背景 */
+    background: linear-gradient(120deg, #155799, #159957); /* Blue-green gradient */
     color: white;
     padding: 3rem 1rem;
     text-align: center;
@@ -21,33 +21,33 @@ header h1 {
     font-size: 2.5rem;
 }
 
-/* 内容容器：控制网页宽度，不让字贴着屏幕边缘 */
+/* Main container: controls width and centering */
 .container {
-    max-width: 800px; /* 网页最大宽度 */
-    margin: 0 auto;   /* 居中显示 */
+    max-width: 800px; /* Max width of the content */
+    margin: 0 auto;   /* Center align */
     padding: 2rem;
     background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 给盒子加个阴影 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Shadow effect */
 }
 
-/* 标题样式 */
+/* Heading 2 style */
 h2 {
-    color: #159957; /* 绿色小标题 */
+    color: #159957; /* Green text color */
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
     margin-top: 30px;
 }
 
-/* 图片样式：让图片自适应屏幕，不要撑爆 */
+/* Responsive image style */
 .responsive-img {
-    max-width: 100%;
+    max-width: 100%; /* Prevents image from overflowing */
     height: auto;
-    border-radius: 8px; /* 图片圆角 */
+    border-radius: 8px; /* Rounded corners */
     display: block;
     margin: 20px auto;
 }
 
-/* 音频盒子样式 */
+/* Audio player container style */
 .audio-box {
     background-color: #f1f8ff;
     padding: 20px;
@@ -56,7 +56,7 @@ h2 {
     border-left: 5px solid #155799;
 }
 
-/* 底部样式 */
+/* Footer style */
 footer {
     text-align: center;
     padding: 20px;
