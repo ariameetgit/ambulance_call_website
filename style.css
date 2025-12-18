@@ -59,15 +59,17 @@ body {
 
 
 header {
-    /* 蓝绿渐变，非常养眼 */
-    background: linear-gradient(to right, #43e97b, #38f9d7); 
-    color: #155799; /* 注意：背景太浅了，文字颜色要改成深蓝色，否则看不见！ */
+    /* 推荐：清爽的医疗科技蓝 */
+    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC); 
+    
+    color: white;
     padding: 100px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    /* 加重一点文字阴影，保证白色文字在亮蓝背景上清晰 */
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
-
 
 header h1 {
     font-size: 4rem;
