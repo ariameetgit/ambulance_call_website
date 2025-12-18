@@ -70,18 +70,17 @@ header {
 
 header h1 {
     font-size: 4rem;
-    margin: 0;
+    margin: 20px;
     font-weight: 800;
-    color: #155799; /* 深蓝色标题 */
+    color: #ffffff;
     background: none; 
     -webkit-text-fill-color: initial;
-    letter-spacing: -1px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 加一点阴影让它更凸显 */
 }
 
 header p {
     font-size: 1.5rem;
-    color: #155799; /* 深蓝色副标题 */
-    opacity: 0.8;
+    color:rgba(255, 255, 255, 0.9);
     max-width: 600px;
     margin: 20px auto 0;
 }
