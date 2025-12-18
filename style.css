@@ -238,7 +238,7 @@ footer {
 .partner-logo {
     display: block;
     /* 关键：限制最大高度。这样无论 Logo 是扁的还是方的，视觉上都不会太大 */
-    max-height: 65px; 
+    max-height: 35px; 
     width: auto;      /* 宽度自动保持比例 */
     
 }
