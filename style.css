@@ -59,16 +59,15 @@ body {
 
 
 header {
-    /* 推荐：清爽的医疗科技蓝 */
-    background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC); 
+    /* 方案3：珊瑚橙到紫红色 */
+    background: linear-gradient(to right, #ff512f, #dd2476);
     
     color: white;
     padding: 100px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    /* 加重一点文字阴影，保证白色文字在亮蓝背景上清晰 */
-    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 header h1 {
