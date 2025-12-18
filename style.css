@@ -25,32 +25,64 @@ body {
 /* =========================================
    2. 充满能量的头部 (Energy Header)
    ========================================= */
-header {
-    /* 从浅蓝到深蓝的明亮渐变，不再是发黑的颜色 */
+
+/* header {
+    从浅蓝到深蓝的明亮渐变，不再是发黑的颜色
     background: linear-gradient(120deg, #00c6ff, #0072ff); 
     color: white;
     padding: 100px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
-    /* 给文字加一点淡淡的阴影，防止背景太亮看不清 */
+    给文字加一点淡淡的阴影，防止背景太亮看不清
     text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
+} */
+
 
 /* 标题样式 */
-header h1 {
-    font-size: 4rem; /* 更大 */
+/* header h1 {
+    font-size: 4rem;
     margin: 0;
     font-weight: 800;
-    background: -webkit-linear-gradient(#fff, #a6c1ee); /* 文字渐变 */
+    background: -webkit-linear-gradient(#fff, #a6c1ee); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
+} */
+
+/* header p {
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 20px auto 0;
+} */
+
+
+header {
+    /* 蓝绿渐变，非常养眼 */
+    background: linear-gradient(to right, #43e97b, #38f9d7); 
+    color: #155799; /* 注意：背景太浅了，文字颜色要改成深蓝色，否则看不见！ */
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: 800;
+    color: #155799; /* 深蓝色标题 */
+    background: none; 
+    -webkit-text-fill-color: initial;
     letter-spacing: -1px;
 }
 
 header p {
     font-size: 1.5rem;
-    color: rgba(255,255,255,0.8);
+    color: #155799; /* 深蓝色副标题 */
+    opacity: 0.8;
     max-width: 600px;
     margin: 20px auto 0;
 }
