@@ -5,81 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambulance Call AI Project</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <h1>🚑 Saving Lives with Sound</h1>
-        <p>Using AI to listen for danger in 999 calls.</p>
+        <div class="container">
+            <h1 style="font-size: 3.5rem;">🚑 Saving Lives with Sound</h1>
+            <p style="font-size: 1.5rem;">Using AI to listen for danger in 999 calls.</p>
+        </div>
     </header>
 
-    <div class="container">
-        
-        <section>
-            <h2>🚑 When Every Second Counts</h2>
-            <p>Imagine someone dials <strong>999</strong> because a family member has collapsed. The operator on the phone has to make a split-second decision: <strong>Is this a life-threatening emergency?</strong></p>
-            <p>Sometimes, it's hard to tell. The caller might be panicking, crying, or unable to speak clearly.</p>
-            <p><strong>This is where our project comes in.</strong> We are building a smart AI helper that listens to the call alongside the human operator to spot danger signs instantly.</p>
-        </section>
+    <section class="section-white">
+        <div class="container">
+            <h2>When Every Second Counts</h2>
+            
+            
 
-        <section>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+                <p>Imagine someone dials <strong>999</strong> because a family member has collapsed. The operator on the phone has to make a split-second decision: <strong>Is this a life-threatening emergency?</strong></p>
+                <p>Sometimes, it's hard to tell. The caller might be panicking, crying, or unable to speak clearly.</p>
+                <p style="color: #155799; font-weight: bold; margin-top: 20px;">
+                    This is where our project comes in. We are building a smart AI helper that listens to the call alongside the human operator to spot danger signs instantly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
             <h2>🕵️‍♂️ Meet the "Voice Detective"</h2>
-            <p>Our AI system is like a super-sensitive detective. It doesn't just "hear" words; it listens for hidden clues in the sound itself.</p>
-            <p>It looks for two types of clues:</p>
+            <p style="text-align: center; margin-bottom: 40px;">Our AI system listens for hidden clues in two dimensions:</p>
             
-            <ul>
-                <li style="margin-bottom: 15px;">
-                    <strong>1. The Words (Text):</strong> Did the caller say <em>"Chest pain"</em> or <em>"Not breathing"</em>?
-                    <br><span style="color: #666; font-style: italic;">(Think of this like reading subtitles.)</span>
-                </li>
-                <li>
-                    <strong>2. The Sound (Audio):</strong>
-                    <ul>
-                        <li>Is the caller gasping for air?</li>
-                        <li>Is their voice shaking with extreme panic?</li>
-                        <li>Is there a loud crash in the background?</li>
-                    </ul>
-                    <span style="color: #666; font-style: italic;">(Think of this like understanding the "mood" of the sound.)</span>
-                </li>
-            </ul>
-        </section>
+            
 
-        <section>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content" style="text-align: center;">
+                        <i class="fas fa-comment-dots" style="font-size: 3rem; color: #155799; margin-bottom: 15px;"></i>
+                        <h3>1. The Words (Text)</h3>
+                        <p>Did the caller say <em>"Chest pain"</em> or <em>"Not breathing"</em>?</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">(Think of this like reading subtitles.)</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-content" style="text-align: center;">
+                        <i class="fas fa-wave-square" style="font-size: 3rem; color: #159957; margin-bottom: 15px;"></i>
+                        <h3>2. The Sound (Audio)</h3>
+                        <p>Is the caller gasping? Is their voice shaking with panic? Is there a loud crash?</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">(Think of this like understanding the "mood".)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="container">
             <h2>🚦 How It Works (The 3 Steps)</h2>
-            <p>You don't need to be a computer scientist to understand how it works. It follows three simple steps:</p>
-            
-            <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
-                <h3>Step 1: Listening 👂</h3>
-                <p>The AI listens to the live audio from the ambulance call.</p>
-            </div>
+            <p style="text-align: center; margin-bottom: 30px;">You don't need to be a computer scientist to understand it:</p>
 
-            <div style="background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 10px;">
-                <h3>Step 2: Thinking 🧠</h3>
-                <p>It converts the voice into text (like Siri does) and analyzes the sound waves. It compares this call to thousands of past emergency calls to see if it matches a "Category 1" (Life-Threatening) pattern.</p>
-            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="color: #333;">Step 1: Listening 👂</h3>
+                        <p>The AI listens to the live audio stream directly from the ambulance call in real-time.</p>
+                    </div>
+                </div>
 
-            <div style="background: #f9f9f9; padding: 15px; border-radius: 8px;">
-                <h3>Step 3: Alerting 🚨</h3>
-                <p>If the AI thinks the patient is in critical danger, it flashes a <strong style="color: red;">Red Light</strong> on the operator's screen. This helps the operator send an ambulance immediately.</p>
-            </div>
-        </section>
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="color: #333;">Step 2: Thinking 🧠</h3>
+                        <p>It converts voice to text and analyzes sound waves, comparing them to thousands of past "Category 1" calls.</p>
+                    </div>
+                </div>
 
-        <section>
+                <div class="card">
+                    <div class="card-content">
+                        <h3 style="color: #d9534f;">Step 3: Alerting 🚨</h3>
+                        <p>If critical danger is detected, it flashes a <strong style="color: red;">Red Light</strong> on the operator's screen instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
             <h2>❓ Why Do We Need This?</h2>
-            <ul>
-                <li><strong>Speed matters:</strong> In a cardiac arrest, every minute without help reduces survival chances by 10%. Our AI tries to save those precious minutes.</li>
-                <li><strong>Overwhelming Demand:</strong> Every second counts, but there are simply too many calls coming in at the same time. AI acts as a "super-filter" to ensure that life-threatening cases don't get stuck in the queue.</li>
-            </ul>
+            
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto;">
+                <ul style="font-size: 1.1rem; line-height: 1.8;">
+                    <li style="margin-bottom: 15px;">
+                        <strong>Speed matters:</strong> In a cardiac arrest, every minute without help reduces survival chances by 10%. Our AI tries to save those precious minutes.
+                    </li>
+                    <li>
+                        <strong>Overwhelming Demand:</strong> AI acts as a "super-filter" to ensure that life-threatening cases don't get stuck in the queue when lines are busy.
+                    </li>
+                </ul>
 
-            <div style="background-color: #e8f4f8; padding: 20px; border-left: 6px solid #155799; margin-top: 30px; border-radius: 4px;">
-                <strong>Important Note:</strong> The AI does NOT replace humans. It is just a helpful tool—like a co-pilot—to make sure no emergency is missed.
+                <div style="background-color: #e8f4f8; padding: 20px; border-left: 6px solid #155799; margin-top: 30px; border-radius: 4px;">
+                    <strong>Important Note:</strong> The AI does NOT replace humans. It is just a helpful tool—like a co-pilot—to make sure no emergency is missed.
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <footer>
-            <p>© 2025 Smart Triage Team</p>
-        </footer>
+    <footer>
+        <div class="container">
+            <p>© 2025 Smart Triage Team | Saving Lives with AI</p>
+        </div>
+    </footer>
 
-    </div>
 </body>
 </html>
