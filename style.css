@@ -23,40 +23,8 @@ body {
 }
 
 /* =========================================
-   2. 充满能量的头部 (Energy Header)
+   2. Header
    ========================================= */
-
-/* header {
-    从浅蓝到深蓝的明亮渐变，不再是发黑的颜色
-    background: linear-gradient(120deg, #00c6ff, #0072ff); 
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    给文字加一点淡淡的阴影，防止背景太亮看不清
-    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-} */
-
-
-/* 标题样式 */
-/* header h1 {
-    font-size: 4rem;
-    margin: 0;
-    font-weight: 800;
-    background: -webkit-linear-gradient(#fff, #a6c1ee); 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -1px;
-} */
-
-/* header p {
-    font-size: 1.5rem;
-    color: rgba(255,255,255,0.8);
-    max-width: 600px;
-    margin: 20px auto 0;
-} */
-
 
 header {
     background: linear-gradient(to left,#155799,#159957);
@@ -223,7 +191,7 @@ footer {
     justify-content: center; /* 居中对齐 */
     gap: 40px; /* 间距 */
     align-items: center;
-    opacity: 0.7; /* 稍微淡一点，不抢主视觉 */
+    /*opacity: 0.7; 稍微淡一点，不抢主视觉 */
 }
 
 .partner-item {
@@ -285,7 +253,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.7; /* 稍微淡一点，不要太抢眼 */
+    /* opacity: 0.7; 稍微淡一点，不要太抢眼 */
 }
 
 /* 5. 手机端适配 */
