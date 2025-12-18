@@ -244,3 +244,66 @@ footer {
         gap: 20px;
     }
 }
+
+/* =========================================
+   合作伙伴 Logo 墙样式
+   ========================================= */
+
+/* 1. Flex 容器：让 Logo 横向排列、居中、自动换行 */
+.partner-grid {
+    display: flex;
+    flex-wrap: wrap;           /* 空间不够时自动折行 */
+    justify-content: center;   /* 整体居中 */
+    align-items: center;       /* 垂直方向居中对齐 */
+    gap: 40px 60px;            /* 上下间距40px，左右间距60px */
+}
+
+/* 2. 单个 Logo 的容器 */
+.partner-item {
+    /* 给每个 Logo 一个基础空间，防止挤在一起 */
+    flex: 0 1 auto; 
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* 3. 图片 Logo 的核心样式 */
+.partner-logo {
+    display: block;
+    /* 关键：限制最大高度。这样无论 Logo 是扁的还是方的，视觉上都不会太大 */
+    max-height: 65px; 
+    width: auto;      /* 宽度自动保持比例 */
+    
+    /* 可选：让 Logo 默认稍微灰一点，鼠标放上去变彩色，更专业 */
+    filter: grayscale(100%); 
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* 鼠标悬停时恢复彩色 */
+.partner-item:hover .partner-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* 4. 文字占位符的样式 (用于还没图片的 Logo) */
+.partner-text-placeholder {
+    font-weight: 700;
+    color: #555;
+    line-height: 1.3;
+    /* 尽量模仿图片的高度感 */
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7; /* 稍微淡一点，不要太抢眼 */
+}
+
+/* 5. 手机端适配 */
+@media (max-width: 768px) {
+    .partner-grid {
+        gap: 30px; /* 手机上间距小一点 */
+    }
+    .partner-logo {
+        max-height: 50px; /* 手机上 Logo 小一点 */
+    }
+}
