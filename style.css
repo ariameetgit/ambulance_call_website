@@ -26,14 +26,15 @@ body {
    2. 充满能量的头部 (Energy Header)
    ========================================= */
 header {
-    /* 使用深色背景突显亮色文字 */
-    background: radial-gradient(circle at center, #1a2a6c, #b21f1f, #fdbb2d); /* 超大胆的“热力图”风格渐变 */
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* 或者：深邃宇宙风格 */
+    /* 从浅蓝到深蓝的明亮渐变，不再是发黑的颜色 */
+    background: linear-gradient(120deg, #00c6ff, #0072ff); 
     color: white;
     padding: 100px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    /* 给文字加一点淡淡的阴影，防止背景太亮看不清 */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 /* 标题样式 */
