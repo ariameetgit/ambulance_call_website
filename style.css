@@ -59,7 +59,7 @@ body {
 
 
 header {
-    background: linear-gradient(120deg, #155799, #159957);
+    background: linear-gradient(120deg,#159957, #155799,);
     color: white;
     padding: 100px 0;
     text-align: center;
@@ -192,6 +192,8 @@ h2::after {
     margin: 10px 0;
 }
 
+
+
 /* =========================================
    6. 强调框与按钮
    ========================================= */
@@ -209,4 +211,36 @@ footer {
     color: white;
     text-align: center;
     padding: 40px 0;
+}
+
+
+/* =========================================
+   7. 合作伙伴板块样式
+   ========================================= */
+.partner-grid {
+    display: flex;
+    flex-wrap: wrap; /* 手机上自动换行 *
+    justify-content: center; /* 居中对齐 */
+    gap: 40px; /* 间距 */
+    align-items: center;
+    opacity: 0.7; /* 稍微淡一点，不抢主视觉 */
+}
+
+.partner-item {
+    text-align: center;
+    font-weight: 600;
+    color: #444;
+}
+
+.partner-text {
+    font-size: 1.1rem;
+    display: block;
+}
+
+/* 手机端适配：让间距小一点 */
+@media (max-width: 600px) {
+    .partner-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
