@@ -1,65 +1,141 @@
-/* Global settings: font and background */
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f6f8fa; /* Light gray background */
-    color: #333;
-    line-height: 1.6;
+/* =========================================
+   1. 全局基础设置
+   ========================================= */
+* {
+    box-sizing: border-box; /* 确保边框不会撑大元素的宽度 */
 }
 
-/* Header style (Top banner) */
+body {
+    margin: 0;          /* 去除浏览器默认边距，实现全屏贴边 */
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* =========================================
+   2. 布局核心工具 (这是居中的关键)
+   ========================================= */
+.container {
+    max-width: 1000px;  /* 内容最大宽度，您可以根据需要调整 */
+    margin: 0 auto;     /* 左右自动边距 = 居中显示 */
+    padding: 0 20px;    /* 防止手机端文字贴边 */
+}
+
+/* =========================================
+   3. 顶部 Hero Header (全宽背景)
+   ========================================= */
 header {
-    background: linear-gradient(120deg, #155799, #159957); /* Blue-green gradient */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* 深邃的蓝绿渐变 */
     color: white;
-    padding: 3rem 1rem;
+    padding: 80px 0;    /* 增加上下高度，显得大气 */
     text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
-/* Main container: controls width and centering */
-.container {
-    max-width: 800px; /* Max width of the content */
-    margin: 0 auto;   /* Center align */
-    padding: 2rem;
-    background: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Shadow effect */
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 
-/* Heading 2 style */
+/* =========================================
+   4. 板块样式 (斑马纹背景)
+   ========================================= */
+section {
+    padding: 60px 0; /* 每个板块上下的间距 */
+}
+
+/* 白色背景板块 */
+.section-white {
+    background-color: #ffffff;
+}
+
+/* 浅灰背景板块 (用于区分层次) */
+.section-gray {
+    background-color: #f4f6f8;
+}
+
 h2 {
-    color: #159957; /* Green text color */
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-top: 30px;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    position: relative;
 }
 
-/* Responsive image style */
-.responsive-img {
-    max-width: 100%; /* Prevents image from overflowing */
-    height: auto;
-    border-radius: 8px; /* Rounded corners */
+/* 标题下面的绿色小横线 */
+h2::after {
+    content: '';
     display: block;
-    margin: 20px auto;
+    width: 50px;
+    height: 3px;
+    background: #42b983;
+    margin: 15px auto 0;
 }
 
-/* Audio player container style */
+/* =========================================
+   5. 卡片网格系统 (展示作品用)
+   ========================================= */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;       /* 允许换行 */
+    gap: 30px;             /* 卡片之间的间距 */
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;   /* 圆角 */
+    width: 300px;          /* 卡片固定宽度 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* 漂亮的阴影 */
+    overflow: hidden;
+    transition: transform 0.3s ease; /* 动画过渡 */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* 鼠标悬停时上浮 */
+}
+
+.card-img {
+    width: 100%;
+    height: 180px;
+    background-color: #ddd; /* 图片加载前的灰色背景 */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* =========================================
+   6. 音频与底部
+   ========================================= */
 .audio-box {
-    background-color: #f1f8ff;
-    padding: 20px;
-    border-radius: 8px;
+    background: white;
+    max-width: 600px;
+    margin: 0 auto; /* 让播放器盒子居中 */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: center;
-    border-left: 5px solid #155799;
+    border-top: 4px solid #42b983; /* 顶部绿色装饰条 */
 }
 
-/* Footer style */
 footer {
+    background: #333;
+    color: #bbb;
     text-align: center;
-    padding: 20px;
-    color: #666;
+    padding: 30px 0;
     font-size: 0.9rem;
 }
