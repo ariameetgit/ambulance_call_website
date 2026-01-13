@@ -265,3 +265,61 @@ footer {
         max-height: 50px; /* 手机上 Logo 小一点 */
     }
 }
+
+/* 平滑滚动效果 (点击跳转时会有滑动的动画) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 浮动导航容器 */
+.floating-nav {
+    position: fixed; /* 固定定位，不随页面滚动 */
+    right: 20px;     /* 距离右侧 20px */
+    top: 50%;        /* 垂直居中 */
+    transform: translateY(-50%); /* 修正垂直居中的偏移 */
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* 柔和的阴影 */
+    z-index: 1000;   /* 确保它在最上层 */
+    border-left: 4px solid #0072ff; /* 左侧装饰条，呼应主题色 */
+    display: block;
+}
+
+/* 列表样式重置 */
+.floating-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.floating-nav li {
+    margin-bottom: 12px;
+}
+
+.floating-nav li:last-child {
+    margin-bottom: 0;
+}
+
+/* 链接样式 */
+.floating-nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* 鼠标悬停效果 */
+.floating-nav a:hover {
+    color: #0072ff; /* 悬停变为蓝色 */
+    transform: translateX(5px); /* 微微向右移动 */
+}
+
+/* 移动端隐藏 (手机屏幕太窄，不适合放侧边栏) */
+@media (max-width: 768px) {
+    .floating-nav {
+        display: none;
+    }
+}
