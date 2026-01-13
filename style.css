@@ -324,106 +324,144 @@ html {
     }
 }
 
-/* 个人简介卡片样式 */
-.profile-card {
-    background: white;
-    max-width: 700px;
-    margin: 40px auto; /* 上下40px，左右自动居中 */
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* 柔和的阴影 */
-    display: flex;
-    align-items: center;
-    gap: 30px; /* 头像和文字的间距 */
+/* =========================================
+   Contact Section & Profile Card Styles
+   ========================================= */
+
+/* 背景区域 */
+.contact-section-wrapper {
+    background-color: #f9f9f9; /* 浅灰背景，区分其他板块 */
+    padding: 60px 0;
 }
 
-/* 头像区域 */
-.profile-img {
+/* 标题样式 */
+.section-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* 标题下方的橙色短横线 */
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background: #ff7e5f;
+    margin: 0 auto 40px auto;
+    border-radius: 2px;
+}
+
+/* 白色卡片容器 */
+.my-profile-card {
+    background: white;
+    max-width: 800px;
+    margin: 0 auto; /* 居中 */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* 漂亮的阴影 */
+    display: flex; /* 开启弹性布局：让头像和文字左右并排 */
+    align-items: center; /* 垂直居中 */
+    gap: 40px; /* 头像和文字的间距 */
+    text-align: left;
+}
+
+/* 左侧头像区域 */
+.my-profile-img {
     flex-shrink: 0; /* 防止头像被挤压 */
 }
 
-.profile-img i {
-    font-size: 120px; /* 图标大小 */
+.my-profile-img i {
+    font-size: 100px; /* 图标大小 */
     color: #ddd;      /* 默认灰色 */
 }
 
-.profile-img img {
+/* 如果你换成了图片，下面这行样式会生效 */
+.my-profile-img img {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* 圆形头像 */
+    border-radius: 50%; /* 圆形 */
     object-fit: cover;
     border: 3px solid #0072ff; /* 蓝色边框 */
 }
 
-/* 文字区域 */
-.profile-info h3 {
-    margin: 0 0 5px 0;
-    color: #333;
-    font-size: 1.5rem;
+/* 右侧文字区域 */
+.my-profile-info h3 {
+    margin: 0 0 10px 0;
+    color: #222;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
-.profile-info .role {
-    color: #0072ff; /* 主题蓝色 */
+.my-profile-info .role {
+    color: #0072ff; /* 主题蓝 */
     font-weight: bold;
     margin-bottom: 15px;
     text-transform: uppercase;
-    font-size: 0.9rem;
     letter-spacing: 1px;
+    font-size: 0.9rem;
 }
 
-.profile-info .bio {
-    color: #666;
+.my-profile-info .bio {
+    color: #555;
+    font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 25px;
 }
 
-/* 按钮区域 */
-.contact-links {
-    display: flex;
-    gap: 15px;
+/* 邮箱文字显示样式 */
+.email-box {
+    margin-bottom: 20px;
 }
 
-.btn-contact {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.email-label {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.email-label i {
+    color: #0072ff;
+    margin-right: 5px;
+}
+
+.email-link {
+    font-size: 1.1rem;
+    color: #0072ff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.email-link:hover {
+    color: #005bb5;
+}
+
+/* 蓝色按钮样式 */
+.my-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
+    background-color: #0072ff;
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 15px rgba(0,114,255, 0.3);
 }
 
-/* 蓝色实心按钮 */
-.btn-contact {
-    background: #0072ff;
-    color: white;
-}
-
-.btn-contact:hover {
-    background: #005bb5;
+.my-btn:hover {
     transform: translateY(-2px);
+    background-color: #005bb5;
 }
 
-/* 边框按钮 (Outline) */
-.btn-contact.btn-outline {
-    background: transparent;
-    border: 2px solid #0072ff;
-    color: #0072ff;
-}
-
-.btn-contact.btn-outline:hover {
-    background: #0072ff;
-    color: white;
-}
-
-/* 手机端适配：变成垂直排列 */
-@media (max-width: 600px) {
-    .profile-card {
-        flex-direction: column;
+/* ==== 手机端适配 (重要) ==== */
+@media (max-width: 768px) {
+    .my-profile-card {
+        flex-direction: column; /* 手机上改为上下排列 */
         text-align: center;
+        padding: 30px 20px;
     }
-    .contact-links {
-        justify-content: center;
+    
+    .my-profile-img {
+        margin-bottom: 20px;
     }
 }
