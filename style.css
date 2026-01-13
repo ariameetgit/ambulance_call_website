@@ -289,9 +289,14 @@ h2::after {
 .floating-nav li:last-child { margin-bottom: 0; }
 
 .floating-nav a {
-    text-decoration: none; color: #555;
-    font-size: 0.9rem; font-weight: 600;
-    transition: all 0.3s ease; display: block;
+    text-decoration: none; 
+    color: #555;
+    /* 原来是 0.9rem，改为 1rem */
+    font-size: 1rem; 
+    font-weight: 600;
+    padding: 5px 0; /* 增加一点上下的点击区域 */
+    transition: all 0.3s ease; 
+    display: block;
 }
 
 .floating-nav a:hover {
