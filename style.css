@@ -2,13 +2,16 @@
    1. 定义活力色盘 (Color Palette)
    ========================================= */
 :root {
-    --primary-color: #00c6ff;      /* 科技蓝：代表 AI */
-    --secondary-color: #0072ff;    /* 深蓝：代表深度学习 */
-    --accent-color: #ff4b1f;       /* 紧急红：代表生命/急救 */
+    --primary-color: #00c6ff;      /* 科技蓝 */
+    --secondary-color: #0072ff;    /* 深蓝 */
+    --accent-color: #ff4b1f;       /* 紧急红 */
     --accent-gradient: linear-gradient(to right, #ff9068, #ff4b1f); /* 活力橙红渐变 */
     --bg-light: #f4f7f6;
     --text-dark: #2c3e50;
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 更深的投影，增加立体感 */
+}
+
+html {
+    scroll-behavior: smooth; /* 平滑滚动 */
 }
 
 * { box-sizing: border-box; }
@@ -16,16 +19,15 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* 更现代的无衬线字体 */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.7;
     color: var(--text-dark);
     background-color: #fff;
 }
 
 /* =========================================
-   2. Header
+   2. Header & Animation
    ========================================= */
-
 header {
     background: linear-gradient(to left,#155799,#159957);
     color: white;
@@ -41,9 +43,7 @@ header h1 {
     margin: 20px;
     font-weight: 800;
     color: #ffffff;
-    background: none; 
-    -webkit-text-fill-color: initial;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.3); /* 加一点阴影让它更凸显 */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 header p {
@@ -53,7 +53,7 @@ header p {
     margin: 20px auto 0;
 }
 
-/* 心跳动画小球 (装饰) */
+/* 心跳动画 */
 .heartbeat-line {
     width: 100%;
     height: 4px;
@@ -70,26 +70,17 @@ header p {
     position: absolute;
     bottom: -8px;
     left: 50%;
-    animation: pulse 1.5s infinite; /* 调用下方定义的动画 */
+    animation: pulse 1.5s infinite;
 }
 
-/* =========================================
-   3. 动画定义 (让网页活起来)
-   ========================================= */
 @keyframes pulse {
     0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 75, 31, 0.7); }
     70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(255, 75, 31, 0); }
     100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 75, 31, 0); }
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); } /* 轻轻漂浮 */
-    100% { transform: translateY(0px); }
-}
-
 /* =========================================
-   4. 布局容器
+   3. 通用布局
    ========================================= */
 .container {
     max-width: 1100px;
@@ -98,9 +89,8 @@ header p {
 }
 
 section { padding: 80px 0; }
-
 .section-white { background-color: #fff; }
-.section-light { background-color: var(--bg-light); } /* 极淡的灰绿色背景 */
+.section-light { background-color: var(--bg-light); }
 
 h2 {
     font-size: 2.5rem;
@@ -108,19 +98,90 @@ h2 {
     margin-bottom: 50px;
     color: #333;
 }
-/* 标题下的装饰线改为渐变 */
 h2::after {
     content: '';
     display: block;
     width: 80px;
     height: 6px;
-    background: var(--accent-gradient); /* 橙红渐变 */
+    background: var(--accent-gradient);
     margin: 15px auto 0;
     border-radius: 3px;
 }
 
 /* =========================================
-   5. 活力卡片 (Vibrant Cards)
+   4. Intro Section (故事 + 双栏布局) - 新增！
+   ========================================= */
+.intro-story {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+.intro-story p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+.story-highlight {
+    font-size: 1.4rem !important;
+    font-weight: bold;
+    color: #0072ff !important;
+    margin-top: 20px;
+}
+
+/* 分割线 */
+.section-divider {
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+    opacity: 0.6;
+}
+.section-divider::before {
+    content: ""; display: block; width: 100%; height: 1px;
+    background: #ddd; position: absolute; top: 50%; z-index: 1;
+}
+.section-divider span {
+    background: white; padding: 0 15px; position: relative; z-index: 2;
+    font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px;
+    color: #999; font-weight: 600;
+}
+
+/* Intro 双栏 */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.intro-col {
+    background: #fdfdfd; padding: 25px;
+    border-radius: 12px; border: 1px solid #eee;
+    font-size: 0.95rem; line-height: 1.6;
+}
+.icon-header {
+    display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+}
+.icon-header i { font-size: 1.5rem; }
+.icon-header h3 { margin: 0; font-size: 1.4rem; color: #333; }
+
+/* 内部小盒子 */
+.info-box {
+    background: rgba(214, 48, 49, 0.05); padding: 15px;
+    border-radius: 8px; margin: 15px 0; border-left: 3px solid #d63031;
+}
+.highlight-box-blue {
+    background: rgba(0, 114, 255, 0.05); padding: 15px;
+    border-radius: 8px; margin-top: 15px; border-left: 3px solid #0072ff;
+    font-weight: 600; color: #333;
+}
+.check-list { list-style: none; padding: 0; }
+.check-list li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.check-list i { color: #00b894; }
+
+@media (max-width: 768px) {
+    .intro-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   5. 活力卡片 (Features)
    ========================================= */
 .card-grid {
     display: grid;
@@ -133,13 +194,10 @@ h2::after {
     border-radius: 16px;
     padding: 40px 30px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 更有弹性的过渡 */
-    border-top: 5px solid transparent; /* 预留顶部边框位置 */
-    position: relative;
-    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 5px solid transparent;
 }
 
-/* 鼠标悬停时的特效：上浮 + 发光 + 顶部出现彩条 */
 .card:hover {
     transform: translateY(-15px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
@@ -155,18 +213,10 @@ h2::after {
     display: inline-block;
 }
 
-.card h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
+.card h3 { font-size: 1.5rem; margin: 10px 0; }
 
-
-
-/* =========================================
-   6. 强调框与按钮
-   ========================================= */
 .highlight-box {
-    background: linear-gradient(135deg, #fff5f5, #fff); /* 淡红背景 */
+    background: linear-gradient(135deg, #fff5f5, #fff);
     border-left: 5px solid var(--accent-color);
     padding: 30px;
     border-radius: 8px;
@@ -174,294 +224,125 @@ h2::after {
     box-shadow: 0 5px 15px rgba(255, 75, 31, 0.1);
 }
 
-footer {
-    background: #1e1e1e;
-    color: white;
-    text-align: center;
-    padding: 40px 0;
-}
-
-
 /* =========================================
-   7. 合作伙伴板块样式
+   6. 合作伙伴 Logo 墙 (Clean Version)
    ========================================= */
 .partner-grid {
     display: flex;
-    flex-wrap: wrap; /* 手机上自动换行 *
-    justify-content: center; /* 居中对齐 */
-    gap: 40px; /* 间距 */
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    /*opacity: 0.7; 稍微淡一点，不抢主视觉 */
+    gap: 40px 60px;
 }
 
 .partner-item {
-    text-align: center;
-    font-weight: 600;
-    color: #444;
-}
-
-.partner-text {
-    font-size: 1.1rem;
-    display: block;
-}
-
-/* 手机端适配：让间距小一点 */
-@media (max-width: 600px) {
-    .partner-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-}
-
-/* =========================================
-   合作伙伴 Logo 墙样式
-   ========================================= */
-
-/* 1. Flex 容器：让 Logo 横向排列、居中、自动换行 */
-.partner-grid {
-    display: flex;
-    flex-wrap: wrap;           /* 空间不够时自动折行 */
-    justify-content: center;   /* 整体居中 */
-    align-items: center;       /* 垂直方向居中对齐 */
-    gap: 40px 60px;            /* 上下间距40px，左右间距60px */
-}
-
-/* 2. 单个 Logo 的容器 */
-.partner-item {
-    /* 给每个 Logo 一个基础空间，防止挤在一起 */
     flex: 0 1 auto; 
     text-align: center;
     transition: all 0.3s ease;
 }
 
-/* 3. 图片 Logo 的核心样式 */
 .partner-logo {
     display: block;
-    /* 关键：限制最大高度。这样无论 Logo 是扁的还是方的，视觉上都不会太大 */
     max-height: 35px; 
-    width: auto;      /* 宽度自动保持比例 */
-    
+    width: auto;
 }
 
-/* 4. 文字占位符的样式 (用于还没图片的 Logo) */
-.partner-text-placeholder {
-    font-weight: 700;
-    color: #555;
-    line-height: 1.3;
-    /* 尽量模仿图片的高度感 */
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* opacity: 0.7; 稍微淡一点，不要太抢眼 */
-}
-
-/* 5. 手机端适配 */
 @media (max-width: 768px) {
-    .partner-grid {
-        gap: 30px; /* 手机上间距小一点 */
-    }
-    .partner-logo {
-        max-height: 50px; /* 手机上 Logo 小一点 */
-    }
-}
-
-/* 平滑滚动效果 (点击跳转时会有滑动的动画) */
-html {
-    scroll-behavior: smooth;
-}
-
-/* 浮动导航容器 */
-.floating-nav {
-    position: fixed; /* 固定定位，不随页面滚动 */
-    right: 20px;     /* 距离右侧 20px */
-    top: 50%;        /* 垂直居中 */
-    transform: translateY(-50%); /* 修正垂直居中的偏移 */
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* 柔和的阴影 */
-    z-index: 1000;   /* 确保它在最上层 */
-    border-left: 4px solid #0072ff; /* 左侧装饰条，呼应主题色 */
-    display: block;
-}
-
-/* 列表样式重置 */
-.floating-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.floating-nav li {
-    margin-bottom: 12px;
-}
-
-.floating-nav li:last-child {
-    margin-bottom: 0;
-}
-
-/* 链接样式 */
-.floating-nav a {
-    text-decoration: none;
-    color: #555;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: block;
-}
-
-/* 鼠标悬停效果 */
-.floating-nav a:hover {
-    color: #0072ff; /* 悬停变为蓝色 */
-    transform: translateX(5px); /* 微微向右移动 */
-}
-
-/* 移动端隐藏 (手机屏幕太窄，不适合放侧边栏) */
-@media (max-width: 768px) {
-    .floating-nav {
-        display: none;
-    }
+    .partner-grid { gap: 30px; }
+    .partner-logo { max-height: 50px; }
 }
 
 /* =========================================
-   Contact Section & Profile Card Styles
+   7. 浮动导航 (Floating Nav)
    ========================================= */
-
-/* 背景区域 */
-.contact-section-wrapper {
-    background-color: #f9f9f9; /* 浅灰背景，区分其他板块 */
-    padding: 60px 0;
-}
-
-/* 标题样式 */
-.section-title {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-/* 标题下方的橙色短横线 */
-.title-underline {
-    width: 60px;
-    height: 4px;
-    background: #ff7e5f;
-    margin: 0 auto 40px auto;
-    border-radius: 2px;
-}
-
-/* 白色卡片容器 */
-.my-profile-card {
+.floating-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
     background: white;
-    max-width: 800px;
-    margin: 0 auto; /* 居中 */
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* 漂亮的阴影 */
-    display: flex; /* 开启弹性布局：让头像和文字左右并排 */
-    align-items: center; /* 垂直居中 */
-    gap: 40px; /* 头像和文字的间距 */
-    text-align: left;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-left: 4px solid #0072ff;
+    display: block;
 }
 
-/* 左侧头像区域 */
-.my-profile-img {
-    flex-shrink: 0; /* 防止头像被挤压 */
+.floating-nav ul { list-style: none; padding: 0; margin: 0; }
+.floating-nav li { margin-bottom: 12px; }
+.floating-nav li:last-child { margin-bottom: 0; }
+
+.floating-nav a {
+    text-decoration: none; color: #555;
+    font-size: 0.9rem; font-weight: 600;
+    transition: all 0.3s ease; display: block;
 }
 
-.my-profile-img i {
-    font-size: 100px; /* 图标大小 */
-    color: #ddd;      /* 默认灰色 */
+.floating-nav a:hover {
+    color: #0072ff; transform: translateX(5px);
 }
 
-/* 如果你换成了图片，下面这行样式会生效 */
-.my-profile-img img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* 圆形 */
-    object-fit: cover;
-    border: 3px solid #0072ff; /* 蓝色边框 */
-}
-
-/* 右侧文字区域 */
-.my-profile-info h3 {
-    margin: 0 0 10px 0;
-    color: #222;
-    font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.my-profile-info .role {
-    color: #0072ff; /* 主题蓝 */
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-.my-profile-info .bio {
-    color: #555;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-/* 邮箱文字显示样式 */
-.email-box {
-    margin-bottom: 20px;
-}
-
-.email-label {
-    margin: 0 0 5px 0;
-    font-weight: bold;
-    color: #333;
-}
-
-.email-label i {
-    color: #0072ff;
-    margin-right: 5px;
-}
-
-.email-link {
-    font-size: 1.1rem;
-    color: #0072ff;
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-.email-link:hover {
-    color: #005bb5;
-}
-
-/* 蓝色按钮样式 */
-.my-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    background-color: #0072ff;
-    color: white !important;
-    padding: 10px 25px;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 15px rgba(0,114,255, 0.3);
-}
-
-.my-btn:hover {
-    transform: translateY(-2px);
-    background-color: #005bb5;
-}
-
-/* ==== 手机端适配 (重要) ==== */
 @media (max-width: 768px) {
-    .my-profile-card {
-        flex-direction: column; /* 手机上改为上下排列 */
-        text-align: center;
-        padding: 30px 20px;
-    }
-    
-    .my-profile-img {
-        margin-bottom: 20px;
-    }
+    .floating-nav { display: none; }
+}
+
+/* =========================================
+   8. Contact / Profile Card
+   ========================================= */
+/* 注意：请确保 HTML 中的 class 也是 profile-card */
+.profile-card {
+    background: white;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.profile-img { flex-shrink: 0; }
+.profile-img i { font-size: 120px; color: #ddd; }
+.profile-img img {
+    width: 120px; height: 120px;
+    border-radius: 50%; object-fit: cover;
+    border: 3px solid #0072ff;
+}
+
+.profile-info h3 { margin: 0 0 5px 0; color: #333; font-size: 1.5rem; }
+.profile-info .role {
+    color: #0072ff; font-weight: bold; margin-bottom: 15px;
+    text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
+}
+.profile-info .bio { color: #666; line-height: 1.6; margin-bottom: 25px; }
+
+.contact-links { display: flex; gap: 15px; }
+
+.btn-contact {
+    text-decoration: none; padding: 10px 20px;
+    border-radius: 30px; font-weight: 600;
+    transition: all 0.3s ease; display: inline-flex;
+    align-items: center; gap: 8px;
+    background: #0072ff; color: white;
+}
+.btn-contact:hover { background: #005bb5; transform: translateY(-2px); }
+
+.btn-contact.btn-outline {
+    background: transparent; border: 2px solid #0072ff; color: #0072ff;
+}
+.btn-contact.btn-outline:hover { background: #0072ff; color: white; }
+
+@media (max-width: 600px) {
+    .profile-card { flex-direction: column; text-align: center; }
+    .contact-links { justify-content: center; }
+}
+
+/* Footer */
+footer {
+    background: #1e1e1e;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
 }
